@@ -2,7 +2,7 @@
 
 class Nabeatu {
 
-    public $condition;
+    private $condition;
 
     public function __construct(string $condition) {
         $this->condition = $condition;
