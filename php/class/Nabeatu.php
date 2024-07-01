@@ -17,12 +17,8 @@ class Nabeatu {
 
         foreach ($numbers as $number) {
             $result.= $number;
-            if($this->is3Multiple($number)) {
+            if($this->is3Multiple($number) || $this->contain3($number)) {
                 $result.= $this->addAho();
-            }
-
-            if($this->is5Multiple($number)) {
-                $result.= $this->addBigVoice();
             }
 
             $result.= '<br>';
@@ -39,15 +35,13 @@ class Nabeatu {
         return $num % 3 === 0;
     }
 
-    private function is5Multiple(int $num): bool {
-        return $num % 5 === 0;
+    private function contain3(int $num): bool {
+        return str_contains((string)$num, '3');
+
     }
+
 
     private function addAho(): String {
         return '(アホ)';
-    }
-
-    private function addBigVoice(): string {
-        return '(大声)';
     }
 }
